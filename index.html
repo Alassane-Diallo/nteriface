@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b7a45" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="N’Teriface — le réseau social malien. Partagez, échangez, découvrez et créez avec votre communauté, de Bamako à Tombouctou."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>N’Teriface — Le réseau social du Mali</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("nteriface:theme:v1");
+          var root = document.documentElement;
+          if (theme === "dark") root.classList.add("theme-dark");
+          if (theme === "light") root.classList.add("theme-light");
+          if (localStorage.getItem("nteriface:reduce-motion:v1") === "true") {
+            root.classList.add("reduce-motion");
+          }
+          if (localStorage.getItem("nteriface:high-contrast:v1") === "true") {
+            root.classList.add("high-contrast");
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
